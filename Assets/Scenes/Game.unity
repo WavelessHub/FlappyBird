@@ -904,7 +904,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fe4c96c7237b4dfda7d499cb72b1ae3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationSpeed: 0.75
+  animationSpeed: 1
 --- !u!23 &611830282
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3953,8 +3953,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7270de21e117c4870b64dd202cd14fc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOver: {fileID: 844198007}
   pauseMenu: {fileID: 1182114137}
+  gameOver: {fileID: 844198007}
 --- !u!95 &9005030925382648643
 Animator:
   serializedVersion: 7
