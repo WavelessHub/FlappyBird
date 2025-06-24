@@ -4,15 +4,15 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    [SerializeField] private GameObject gameOver;
     [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject gameOver;
 
     private bool hasStarted = false;
 
-    private Game_UI gameUI => FindFirstObjectByType<Game_UI>();
-    private Bird bird => FindFirstObjectByType<Bird>();
-
     private int score = 0;
+
+    private Game_UI gameUI;
+    private Bird bird;
 
     void Awake()
     {
@@ -20,6 +20,9 @@ public class GameManager : MonoBehaviour
             instance = this;
         else
             Destroy(gameObject);
+
+        gameUI = FindFirstObjectByType<Game_UI>();
+        bird = FindFirstObjectByType<Bird>();
     }
 
     void Start()
@@ -50,6 +53,8 @@ public class GameManager : MonoBehaviour
 
     public void ResetGame(GameObject mainMenu)
     {
+        Time.timeScale = 1;
+
         bird.transform.position = Vector2.zero;
         bird.rb.bodyType = RigidbodyType2D.Static;
 

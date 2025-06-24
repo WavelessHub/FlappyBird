@@ -22,7 +22,9 @@ public class Bird : MonoBehaviour
     {
         if (!gameManager.HasGameStarted()) return;
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        bool canJump = Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0);
+
+        if (canJump)
         {
             Jump();
         }
