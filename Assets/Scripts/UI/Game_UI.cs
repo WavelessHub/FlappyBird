@@ -14,8 +14,23 @@ public class Game_UI : MonoBehaviour
         uiToEnable.SetActive(true);
     }
 
-    public void PauseGame() => GameManager.instance.PauseGame();
+    public void PauseGame()
+    {
+        MenuClickSFX();
+        GameManager.instance.PauseGame();
+    }
 
-    public void StartGame(GameObject inGameUI) => GameManager.instance.StartGame(inGameUI);
-    public void GoToMainMenu(GameObject mainMenu) => GameManager.instance.ResetGame(mainMenu);
+    public void StartGame(GameObject inGameUI)
+    {
+        MenuClickSFX();
+        GameManager.instance.StartGame(inGameUI);
+    }
+
+    public void GoToMainMenu(GameObject mainMenu)
+    {
+        MenuClickSFX();
+        GameManager.instance.ResetGame(mainMenu);
+    }
+
+    void MenuClickSFX() => AudioManager.instance.PlaySFX(3);
 }

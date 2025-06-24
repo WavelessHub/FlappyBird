@@ -17,6 +17,7 @@ public class GameOver_UI : MonoBehaviour
 
     public void GoToMainMenu(GameObject mainMenu)
     {
+        AudioManager.instance.PlaySFX(3);
         GameManager.instance.ResetGame(mainMenu);
     }
 }
